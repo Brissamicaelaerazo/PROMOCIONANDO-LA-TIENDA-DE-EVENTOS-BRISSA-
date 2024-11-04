@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería</title>
+    <link rel="stylesheet" href="estilos.css">
+
+</head>
+<body>
+    <a href="../index.html" class="back-button">← Volver</a>
+    <h1>Decoraciones</h1>
+    
+    <div class="gallery-container">
+        <img src="decoracion1.jpg" alt="Decoración 1">
+        <img src="decoracion2.jpg" alt="Decoración 2">
+        <img src="decoracion3.jpg" alt="Decoración 3">
+        <img src="decoracion4.jpg" alt="Decoración 4">
+        <img src="decoracion5.jpg" alt="Decoración 5">
+        <img src="decoracion6.jpg" alt="Decoración 6">
+        <img src="decoracion7.jpg" alt="Decoración 7">
+        <img src="decoracion8.jpg" alt="Decoración 8">
+        <img src="decoracion9.jpg" alt="Decoración 9">
+        <img src="decoracion10.jpg" alt="Decoración 10">
+        <img src="decoracion11.jpg" alt="Decoración 11">
+        <img src="decoracion12.jpg" alt="Decoración 12">
+        <img src="decoracion13.jpg" alt="Decoración 13">
+        <img src="decoracion14.jpg" alt="Decoración 14">
+        <img src="decoracion15.jpg" alt="Decoración 15">
+        <img src="decoracion16.jpg" alt="Decoración 16">
+        <img src="decoracion17.jpg" alt="Decoración 17">
+        <img src="decoracion18.jpg" alt="Decoración 18">
+        <img src="decoracion19.jpg" alt="Decoración 19">
+        <img src="decoracion20.jpg" alt="Decoración 20">
+        <img src="decoracion21.jpg" alt="Decoración 21">
+        <img src="decoracion22.jpg" alt="Decoración 22">
+        <img src="decoracion23.jpg" alt="Decoración 23">
+        <img src="decoracion24.jpg" alt="Decoración 24">
+        <img src="decoracion25.jpg" alt="Decoración 25">
+        <img src="decoracion26.jpg" alt="Decoración 26">
+        <img src="decoracion27.jpg" alt="Decoración 27">
+        <img src="decoracion28.jpg" alt="Decoración 28">
+        <img src="decoracion29.jpg" alt="Decoración 29">
+        <img src="decoracion30.jpg" alt="Decoración 30">
+
+    </div>
+
+    <div class="modal" id="modal">
+        <span class="close" id="close">&times;</span>
+        <img id="modalImg" alt="Imagen ampliada">
+    </div>
+
+    <script>
+
+        const modal = document.getElementById('modal');
+        const modalImg = document.getElementById('modalImg');
+        const closeModal = document.getElementById('close');
+
+        document.querySelectorAll('.gallery-container img').forEach(img => {
+            img.addEventListener('click', (e) => {
+                modal.style.display = 'flex'; 
+                modalImg.src = e.target.src; 
+            });
+        });
+
+        closeModal.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+
+        modal.addEventListener('click', (e) => {
+            if (e.target !== modalImg) {
+                modal.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
